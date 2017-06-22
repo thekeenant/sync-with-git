@@ -1,0 +1,6 @@
+git: git
+abort-on-failure: false
+repositories:
+- url: git@github.com:thekeenant/sync-with-git
+  branch: master
+  target: ./
