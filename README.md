@@ -1,3 +1,16 @@
+# sync-with-git
+
+With this small Python tool, you can copy the contents of a set of Git repositories into local directories.
+
+## Usage
+
+First modify the `sync.yml` file, then run the script, `./sync.py` with an optional parameter to specify a different YAML configuration file.
+
+## Configuration
+
+The template is self-explanatory!
+
+```yaml
 # the git command (may have to specify "/usr/bin/git" for example)
 git: git
 
@@ -19,3 +32,4 @@ repositories:
 - url: git@github.com:thekeenant/repo2.git
   branch: dev
   target: ./repo2-copy
+```

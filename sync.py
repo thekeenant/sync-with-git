@@ -13,10 +13,7 @@ if len(sys.argv) > 1:
   config = sys.argv[1]
 
 if len(sys.argv) > 2:
-  tmp = sys.argv[2]
-
-if len(sys.argv) > 3:
-  print("Invalid usage: ./sync.py <config filename> <tmp directory>")
+  print("Invalid usage: ./sync.py <config filename>")
 
 print("Using configuration: " + config)
 print("Using tmp directory: " + tmp)
@@ -29,6 +26,7 @@ if os.path.exists(tmp):
 with open(config, "r") as file:
   data = yaml.load(file)
   git = data["git"]
+  tmp = data["tmp"]
   abort = data["abort-on-failure"]
   repos = data["repositories"]
 
@@ -59,11 +57,12 @@ with open(config, "r") as file:
       print("WARNING: Nothing cloned/found!")
 
       if abort:
-        print("Aborting sync, as defined in configuration.")
+        print("SEVERE: Aborting sync, as defined in configuration.")
         break
       else:
         continue
     else:
+      print("Success!")
       successes += 1
 
     # unnecessary junk
