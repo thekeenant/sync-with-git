@@ -24,7 +24,7 @@ abort-on-failure: false
 repositories:
 
 # this will clone the specified repo with the branch dev into the working directory
-- url: git@github.com:thekeenant/cloudflare-mc.git
+- url: git@github.com:thekeenant/repo1.git
   branch: master
   target: ./
 
